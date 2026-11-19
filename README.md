@@ -1,4 +1,4 @@
-# Raspberry Pi Pico RP2040-Zero - PCM1808 Stereo 24-bit I2S Slave Microphone
+# Raspberry Pi Pico - PCM1808 Stereo 24-bit I2S Slave Microphone
 
 This project is a modified TinyUSB USB audio microphone example for the Raspberry Pi Pico (RP2040). It has been adapted to capture stereo (2-channel) audio from a **PCM1808** module configured as an **I2S Master**.
 
@@ -18,9 +18,9 @@ The Pico operates in **I2S Slave mode**, listening for external bit clock (BCLK)
 
 | PCM1808 Pin | Pico GPIO | Description |
 | :--- | :--- | :--- |
-| **DATA** | **GPIO 6** | I2S Serial Data Output from PCM1808 |
-| **BCLK** | **GPIO 7** | I2S Bit Clock (Output from PCM1808) |
-| **LRCK** | **GPIO 8** | I2S Word Select / Left-Right Clock (Output from PCM1808) |
+| **DATA** | **GPIO 10** | I2S Serial Data Output from PCM1808 |
+| **BCLK** | **GPIO 11** | I2S Bit Clock (Output from PCM1808) |
+| **LRCK** | **GPIO 12** | I2S Word Select / Left-Right Clock (Output from PCM1808) |
 | **VDD** | **VBUS (5V)** | Power (5V from USB) |
 | **GND** | **GND** | Common Ground |
 
