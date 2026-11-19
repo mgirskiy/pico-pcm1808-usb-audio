@@ -1,3 +1,16 @@
+Компиляция под Windows:
+1. Установить Visual Studio Code
+2. В Расширениях/Extentions VS Code установить С/С++, CMake Tools, Python, Paspberry Pi Pico.
+3. В Pico-SDK уже есть TinyUSB, но не полный, лучше скачать с https://github.com/hathach/tinyusb и распаковать поверх sdk-шного, он лежит в папке пользователя по пути что-то типа /.pico-sdk/sdk/2.3.1/lib/tinyusb может меняться номер версии.
+4. Скачать и распаковать https://github.com/mgirskiy/pico-pcm1808-usb-audio Code >> Download ZIP
+5. Отредактировать пути к файлам библиотеки TinyUSB в файлах 
+  CMakeLists.txt 3-я строка include(${USERHOME}/.pico-sdk/sdk/2.3.1/lib/tinyusb/hw/bsp/family_support.cmake)
+  CMakePresets.json 4-я строка "${USERHOME}/.pico-sdk/sdk/2.3.1/lib/tinyusb/hw/bsp/BoardPresets.json"
+  Makefile 1-я строка include ${USERHOME}/.pico-sdk/sdk/2.3.1/lib/tinyusb/hw/bsp/family_support.mk
+  последняя строка include ${USERHOME}/.pico-sdk/sdk/2.3.1/lib/tinyusb/hw/bsp/family_rules.mk
+6. VS Code >> Raspberry Pi Pico Project >> Import Project далее нужно будет выбрать доску - Pico
+7. Подождать пока все импортируется, Скомпилировать F7, в папке cmake-build или build будет лежать файл pcm1808_stereo_mic, который нужно закинуть на плату.
+
 # Raspberry Pi Pico (RP2040-Zero) - PCM1808 Stereo 24-bit I2S Slave Microphone
 
 This project is a modified TinyUSB USB audio microphone example for the Raspberry Pi Pico (RP2040-Zero). It has been adapted to capture stereo (2-channel) audio from a **PCM1808** module configured as an **I2S Master**.
