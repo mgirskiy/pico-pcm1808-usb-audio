@@ -48,9 +48,9 @@
 #define BYTES_PER_SAMPLE  CFG_TUD_AUDIO_FUNC_1_N_BYTES_PER_SAMPLE_TX
 
 // I2S Pins
-#define PIN_DATA 10
-#define PIN_BCLK 11
-#define PIN_LRCK 12
+#define PIN_DATA 6
+#define PIN_BCLK 7
+#define PIN_LRCK 8
 
 // DMA buffer size: 1ms of audio at 48kHz Stereo
 #define SAMPLES_PER_MS    (AUDIO_SAMPLE_RATE / 1000)
