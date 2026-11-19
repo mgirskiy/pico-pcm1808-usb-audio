@@ -91,7 +91,7 @@ uint8_t clkValid;
 
 audio20_control_range_4_n_t(1) sampleFreqRng;
 
-void led_blinking_task(void);
+//void led_blinking_task(void);
 void audio_task(void);
 static void dma_handler(void);
 static bool buffer_is_queued(uint8_t buffer_index);
@@ -249,7 +249,7 @@ int main(void) {
 
   while (1) {
     tud_task();
-    led_blinking_task();
+    //led_blinking_task();
     audio_task();
   }
 }
@@ -364,7 +364,7 @@ bool tud_audio_get_req_entity_cb(uint8_t rhport, tusb_control_request_t const *p
   }
   return false;
 }
-
+/*
 void led_blinking_task(void) {
   static uint32_t start_ms = 0;
   static bool led_state = false;
@@ -373,3 +373,4 @@ void led_blinking_task(void) {
   board_led_write(led_state);
   led_state = 1 - led_state;
 }
+*/
